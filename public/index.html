@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAEPVision | Fotografia</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="usuario" id="usuarioBox"><div class="avatar" id="avatar">?</div><div><strong id="nomeUsuario">Visitante</strong><small id="tipoUsuario">Explore fotografias</small></div><button id="perfilBtn" class="btn escuro">Ver Perfil</button></div>
+  <h1>SAEPVision</h1>
+  <button id="loginBtn" class="btn escuro">Login</button>
+</header>
+<main>
+  <section class="busca"><input id="busca" placeholder="Pesquise por título, local ou fotógrafo..."><button id="buscarBtn" aria-label="Buscar">⌕</button></section>
+  <div class="titulo-galeria"><h2>Galeria de fotografias</h2><button id="novaFotoBtn" class="btn" hidden>＋ Publicar foto</button></div>
+  <div id="mensagem" role="status"></div><section id="galeria" class="galeria"></section>
+  <section id="formPublicacao" class="painel" hidden>
+    <h2>Cadastro de fotografias</h2>
+    <form id="fotoForm">
+      <label>Título da imagem<input name="titulo" placeholder="Ex.: Dedo de Deus" required></label>
+      <label>Local onde foi tirada<input name="localizacao" placeholder="Ex.: Rio de Janeiro" required></label>
+      <label>Imagem<input name="imagem" type="file" accept=".jpg,.jpeg,.png,.gif,.webp" required></label>
+      <div class="acoes"><button class="btn" type="submit">Cadastrar</button><button class="btn contorno" type="button" id="cancelarFoto">Cancelar</button></div>
+    </form>
+  </section>
+</main>
+<footer><span>SAEPVision</span><div class="redes">◎　♪　in　▶</div><span>Copyright 2026-2027</span></footer>
+
+<div class="overlay" id="loginModal" hidden><section class="modal">
+  <button class="fechar" data-close="loginModal">×</button><h2 id="modalTitulo">Login</h2>
+  <form id="loginForm">
+    <label>E-mail<input name="email" type="email" placeholder="Digite seu e-mail" required></label>
+    <label>Senha<input name="senha" type="password" placeholder="Digite sua senha" required></label>
+    <div class="acoes"><button class="btn" type="submit">Login</button><button class="btn contorno" type="button" data-close="loginModal">Cancelar</button></div>
+  </form>
+  <p class="alternar">Não tem conta? <button id="mostrarCadastro">Cadastre-se</button></p>
+  <form id="cadastroForm" hidden>
+    <label>Nome<input name="nome" required></label><label>E-mail<input name="email" type="email" required></label>
+    <label>Senha<input name="senha" type="password" minlength="6" required></label>
+    <label>Tipo de usuário<select name="tipo"><option value="comum">Usuário comum</option><option value="fotografo">Fotógrafo</option></select></label>
+    <button class="btn" type="submit">Criar conta</button>
+    <p class="alternar">Já tem conta? <button type="button" id="mostrarLogin">Entrar</button></p>
+  </form>
+</section></div>
+<div class="overlay" id="perfilModal" hidden><section class="modal perfil"><button class="fechar" data-close="perfilModal">×</button><h2>Perfil do fotógrafo</h2><div id="perfilConteudo"></div><button id="logoutBtn" class="btn">Logout</button></section></div>
+<script src="app.js"></script>
+</body></html>
